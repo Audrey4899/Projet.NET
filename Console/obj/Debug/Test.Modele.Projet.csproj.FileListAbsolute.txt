@@ -1,0 +1,37 @@
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\Database1.mdf
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\Database1_log.ldf
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\Console.exe.config
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\Console.exe
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\Console.pdb
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\Classes.dll
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\EntityFramework.dll
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\EntityFramework.SqlServer.dll
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\Classes.pdb
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\Classes.dll.config
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\EntityFramework.xml
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\bin\Debug\EntityFramework.SqlServer.xml
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\obj\Debug\Test.Modele.Projet.csprojAssemblyReference.cache
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\obj\Debug\Test.Modele.Projet.csproj.CoreCompileInputs.cache
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\obj\Debug\Test.Modele.Projet.csproj.CopyComplete
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\obj\Debug\Console.exe
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Console\obj\Debug\Console.pdb
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\Database1.mdf
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\Database1_log.ldf
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\Console.exe.config
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\Console.exe
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\Console.pdb
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\Classes.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\EntityFramework.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\EntityFramework.SqlServer.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\Classes.pdb
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\Classes.dll.config
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\EntityFramework.xml
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\EntityFramework.SqlServer.xml
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\obj\Debug\Test.Modele.Projet.csprojAssemblyReference.cache
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\obj\Debug\Test.Modele.Projet.csproj.CoreCompileInputs.cache
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\obj\Debug\Test.Modele.Projet.csproj.CopyComplete
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\obj\Debug\Console.exe
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\obj\Debug\Console.pdb
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\BusinessLayer.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\BusinessLayer.pdb
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\Console\bin\Debug\BusinessLayer.dll.config

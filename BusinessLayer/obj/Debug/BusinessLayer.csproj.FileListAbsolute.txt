@@ -1,0 +1,17 @@
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\Database1.mdf
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\Database1_log.ldf
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\Classes.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\Classes.pdb
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\Classes.dll.config
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\Utilisateurs\Audrey\Bureau\LP WEB\.NET\Projet.Verlynde\BusinessLayer\obj\Debug\BusinessLayer.pdb

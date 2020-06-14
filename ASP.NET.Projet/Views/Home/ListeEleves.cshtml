@@ -1,0 +1,18 @@
+﻿@using ASP.NET.Projet.Models
+@model List<EleveViewModel>
+
+<h2>Liste des eleves</h2>
+
+<table>
+    <tr>
+        <th>Identité</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var eleve in Model)
+    {
+        <tr>
+            <td>@eleve.Identite</td>
+            <td><button>Détail</button></td>
+        </tr>
+    }
+</table>

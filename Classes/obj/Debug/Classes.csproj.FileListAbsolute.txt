@@ -1,0 +1,8 @@
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Classes\bin\Debug\Database1.mdf
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Classes\bin\Debug\Database1_log.ldf
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Classes\bin\Debug\Classes.dll
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Classes\bin\Debug\Classes.pdb
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Classes\obj\Debug\Classes.dll
+D:\Utilisateurs\Audrey\Bureau\Projet.Verlynde\Classes\obj\Debug\Classes.pdb
