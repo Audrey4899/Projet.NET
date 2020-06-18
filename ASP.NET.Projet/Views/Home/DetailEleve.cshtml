@@ -4,26 +4,52 @@
 <h2>Fiche eleve</h2>
 
 <!-- Identité -->
+<h3>Nom :</h3>
 <h4>@Model.Identite</h4>
 
 <!-- Notes -->
-<table>
-    <tr>
-        <th>Notes</th>
-        <th>Action</th>
-    </tr>
-    <tr>
-        <td>@Model.Notes</td>
-        <td><button>Modifier</button></td>
-    </tr>
-</table>
+<h3>Notes :</h3>
+@if (Model.Notes != null)
+{
+    <table>
+        <tr>
+            <th>Notes</th>
+            <th></th>
+        </tr>
+
+        @foreach (var note in Model.Notes)
+        {
+            <tr>
+                <td>@note.NoteValeur</td>
+                <td><button>Modifier</button></td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h4> L'eleve n'a pas encore de note.</h4>
+}
+<button>Entrer une note</button>
 
 <!-- Absences -->
-<table>
-    <tr>
-        <th>Identité</th>
-    </tr>
-    <tr>
-        <td>@Model.Absences</td>
-    </tr>
-</table>
+<h3>Absences :</h3>
+@if (Model.Absences != null)
+{
+    <table>
+        <tr>
+            <th>Absences</th>
+        </tr>
+        @foreach (var absence in Model.Absences)
+        {
+            <tr>
+                <td>@absence.Motif</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h4> L'eleve n'a pas d'absence.</h4>
+}
+<button>Enregistrer une absence</button>

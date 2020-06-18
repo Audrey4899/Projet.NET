@@ -12,7 +12,7 @@
     {
         <tr>
             <td>@eleve.Identite</td>
-            <td><button>Détail</button></td>
+            <td><input type="button" value="Detail" onclick="location.href='@Url.Action("DetailEleve", "Home",  new { idEleve = eleve.ID })'" /></td>
         </tr>
     }
 </table>

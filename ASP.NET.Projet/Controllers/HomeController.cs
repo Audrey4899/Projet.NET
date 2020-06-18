@@ -38,7 +38,7 @@ namespace ASP.NET.Projet.Controllers
             List<Eleve> eleves = manager.GetAllEleve();
             foreach(var eleve in eleves)
             {
-                elevesVM.Add(new EleveViewModel { Identite = $"{ eleve.Nom } {eleve.Prenom }" });
+                elevesVM.Add(new EleveViewModel { Identite = $"{ eleve.Nom.ToUpper() } {eleve.Prenom }", ID = eleve.EleveId });
             }
 
             return View(elevesVM);
@@ -49,7 +49,7 @@ namespace ASP.NET.Projet.Controllers
             List<Eleve> elevesRecherche = manager.GetEleveByName(name);
             foreach (var eleveTrouve in elevesRecherche)
             {
-                elevesVM.Add(new EleveViewModel { Identite = $"{ eleveTrouve.Nom } {eleveTrouve.Prenom }" });
+                elevesVM.Add(new EleveViewModel { Identite = $"{ eleveTrouve.Nom.ToUpper() } {eleveTrouve.Prenom }" });
             }
 
             return View(elevesVM);
@@ -57,13 +57,25 @@ namespace ASP.NET.Projet.Controllers
 
         public ActionResult DetailEleve(int idEleve)
         {
-            Eleve detailEleve = manager.GetEleveById(idEleve);
-            EleveViewModel eleveVM = new EleveViewModel 
-            { 
-                Identite = $"{ detailEleve.Nom } {detailEleve.Prenom }", 
-                Notes = $"{ detailEleve.Notes }", 
-                Absences = $"{ detailEleve.Absences }" 
+            Eleve eleve = manager.GetEleveById(idEleve);
+            EleveViewModel eleveVM = new EleveViewModel
+            {
+                Identite = $"{ eleve.Nom.ToUpper() } {eleve.Prenom }"
             };
+            if (eleve.Notes != null)
+            {
+                foreach (var note in eleve.Notes)
+                {
+                    eleveVM.Notes.Add(note);
+                }
+            }
+            if (eleve.Absences != null)
+            {
+                foreach (var absence in eleve.Absences)
+                {
+                    eleveVM.Absences.Add(absence);
+                }
+            }
 
             return View(eleveVM);
         }
@@ -73,7 +85,7 @@ namespace ASP.NET.Projet.Controllers
             List<Eleve> elevesClasse = manager.GetEleveByClasse(idClasse);
             foreach (var eleve in elevesClasse)
             {
-                elevesVM.Add(new EleveViewModel { Identite = $"{ eleve.Nom } {eleve.Prenom }" });
+                elevesVM.Add(new EleveViewModel { Identite = $"{ eleve.Nom.ToUpper() } {eleve.Prenom }" });
             }
 
             return View(elevesVM);

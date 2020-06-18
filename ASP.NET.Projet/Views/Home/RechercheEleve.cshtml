@@ -3,16 +3,25 @@
 
 <h2>Eleves trouvés</h2>
 
-<table>
-    <tr>
-        <th>Identité</th>
-        <th>Action</th>
-    </tr>
-    @foreach (var eleve in Model)
-    {
+@if (Model.Count > 0)
+{
+    <table>
         <tr>
-            <td>@eleve.Identite</td>
-            <td><button>Détail</button></td>
+            <th>Identité</th>
+            <th>Action</th>
         </tr>
-    }
-</table>
+
+        @foreach (var eleve in Model)
+        {
+            <tr>
+                <td>@eleve.Identite</td>
+                <td><button>Détail</button></td>
+            </tr>
+        }
+    </table>
+}
+
+else
+{
+    <h4>Aucun élève ne correspond à cette recherche.</h4>
+}
