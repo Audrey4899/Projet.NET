@@ -3,12 +3,30 @@
 
 <h2>Ajouter une note</h2>
 
-@using (Html.BeginForm("AjouterNote", "Home", FormMethod.Post))
+@using (Html.BeginForm())
 {
-    @Html.EditorFor(m => m.Date)
-    @Html.TextBoxFor(m => m.Note)
-    @Html.TextBoxFor(m => m.Matiere)
-    @Html.TextAreaFor(m => m.Appreciation)
-
-    <input type="submit" value="Ajouter" />
+    @Html.ValidationSummary()
+    <div>
+        @Html.LabelFor(m => m.Date)
+        <br />
+        @Html.EditorFor(m => m.Date, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.Note)
+        <br />
+        @Html.EditorFor(m => m.Note, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.Matiere)
+        @Html.TextBoxFor(m => m.Matiere, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.Appreciation)
+        @Html.TextAreaFor(m => m.Appreciation, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-success" type="submit" value="Ajouter">Ajouter</button>
 }

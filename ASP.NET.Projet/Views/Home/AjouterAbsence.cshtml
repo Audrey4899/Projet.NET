@@ -3,10 +3,19 @@
 
 <h2>Enregistrer une absence</h2>
 
-@using (Html.BeginForm("AjouterAbsence", "Home", FormMethod.Post))
+@using (Html.BeginForm())
 {
-    @Html.EditorFor(m => m.Date)
-    @Html.TextBoxFor(m => m.Motif)
-
-    <input type="submit" value="Enregistrer" />
+    @Html.ValidationSummary()
+    <div>
+        @Html.LabelFor(m => m.Date)
+        <br />
+        @Html.EditorFor(m => m.Date, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.Motif)
+        @Html.TextBoxFor(m => m.Motif, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-success" type="submit" value="Enregistrer">Enregistrer</button>
 }

@@ -9,8 +9,11 @@ namespace ASP.NET.Projet.Models
     public class AbsenceViewModel
     {
         public int ID { get; set; }
+
+        [Required]
         public string Motif { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime Date { get; set; }

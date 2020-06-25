@@ -106,28 +106,55 @@ namespace ASP.NET.Projet.Controllers
             return View(elevesVM);
         }
 
-        [HttpPost]
-        public ActionResult AjouterNote(Note note, int idEleve)
+        [HttpGet]
+        public ActionResult AjouterNote()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AjouterNote(Note note)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(note);
+            }
             manager.AjouterNote(note);
+            return Redirect("/");
+        }
 
-            return Redirect("/Home/ListeEleves");
+        [HttpGet]
+        public ActionResult ModifierNote()
+        {
+            return View();
         }
 
         [HttpPost]
-        public ActionResult ModifierNote(Note note, int idEleve)
+        public ActionResult ModifierNote(Note note)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(note);
+            }
             manager.ModifierNote(note);
+            return Redirect("/");
+        }
 
-            return Redirect("/Home/ListeEleves");
+        [HttpGet]
+        public ActionResult AjouterAbsence()
+        {
+            return View();
         }
 
         [HttpPost]
-        public ActionResult AjouterAbsence(Absence absence, int idEleve)
+        public ActionResult AjouterAbsence(Absence absence)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(absence);
+            }
             manager.AjouterAbsence(absence);
-
-            return Redirect("/Home/ListeEleves");
+            return Redirect("/");
         }
     }
 }
