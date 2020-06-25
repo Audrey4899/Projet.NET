@@ -114,5 +114,14 @@ namespace BusinessLayer
         }
 
         #endregion
+
+        #region Classe
+        public List<Classe> GetAllClasses()
+        {
+            ClasseQuery cq = new ClasseQuery(contexte);
+            return cq.GetAll().ToList();
+        }
+
+        #endregion
     }
 }

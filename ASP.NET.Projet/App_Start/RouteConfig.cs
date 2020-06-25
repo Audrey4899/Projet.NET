@@ -14,6 +14,36 @@ namespace ASP.NET.Projet
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "RechercheEleve",
+                url: "{controller}/{action}/{name}",
+                defaults: new { controller = "Home", action = "RechercheEleve" }
+            );
+
+            routes.MapRoute(
+                name: "DetailEleve",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "DetailEleve" }
+            );
+
+            routes.MapRoute(
+                name: "DetailClasse",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "DetailClasse" }
+            );
+
+            routes.MapRoute(
+                name: "Eleves",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "ListeEleves", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Classes",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "ListeClasses", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

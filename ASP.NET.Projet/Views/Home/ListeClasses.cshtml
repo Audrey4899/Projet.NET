@@ -1,0 +1,21 @@
+﻿@using ASP.NET.Projet.Models
+@model List<ClasseViewModel>
+
+<h2>Liste des classes</h2>
+
+<table>
+    <tr>
+        <th>Etablissement</th>
+        <th>Niveau</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var classe in Model)
+    {
+        <tr>
+            <td>@classe.Nom</td>
+            <td>@classe.Niveau</td>
+            <td><input type="button" value="Detail" onclick="location.href='@Url.Action("DetailClasse", "Home",  new { idClasse = classe.ID })'" /></td>
+        </tr>
+    }
+</table>
+

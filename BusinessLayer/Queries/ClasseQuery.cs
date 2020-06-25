@@ -1,4 +1,5 @@
 ﻿using Classes;
+using Classes.Entites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,11 @@ namespace BusinessLayer.Queries
         public ClasseQuery(Contexte contexte)
         {
             _contexte = contexte;
+        }
+
+        public IQueryable<Classe> GetAll()
+        {
+            return _contexte.Classes;
         }
     }
 }

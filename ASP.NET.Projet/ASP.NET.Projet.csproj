@@ -131,6 +131,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClasseViewModel.cs" />
     <Compile Include="Models\EleveViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,6 +175,8 @@
     <Content Include="Views\Home\RechercheEleve.cshtml" />
     <Content Include="Views\Home\DetailEleve.cshtml" />
     <Content Include="Views\Home\DetailClasse.cshtml" />
+    <Content Include="Views\Home\AjouterNote.cshtml" />
+    <Content Include="Views\Home\ListeClasses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

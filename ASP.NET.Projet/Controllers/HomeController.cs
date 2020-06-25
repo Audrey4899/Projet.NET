@@ -13,6 +13,7 @@ namespace ASP.NET.Projet.Controllers
     {
         Manager manager = Manager.GetInstance();
         List<EleveViewModel> elevesVM = new List<EleveViewModel>();
+        List<ClasseViewModel> classesVM = new List<ClasseViewModel>();
 
         public ActionResult Index()
         {
@@ -58,26 +59,39 @@ namespace ASP.NET.Projet.Controllers
         public ActionResult DetailEleve(int idEleve)
         {
             Eleve eleve = manager.GetEleveById(idEleve);
-            EleveViewModel eleveVM = new EleveViewModel
+
+            List<Note> notes = manager.GetNotesByEleve(idEleve);
+            if (notes.Any())
             {
-                Identite = $"{ eleve.Nom.ToUpper() } {eleve.Prenom }"
-            };
-            if (eleve.Notes != null)
-            {
-                foreach (var note in eleve.Notes)
+                foreach (var note in notes)
                 {
-                    eleveVM.Notes.Add(note);
-                }
-            }
-            if (eleve.Absences != null)
-            {
-                foreach (var absence in eleve.Absences)
-                {
-                    eleveVM.Absences.Add(absence);
+                    eleve.Notes.Add(note);
                 }
             }
 
-            return View(eleveVM);
+            List<Absence> absences = manager.GetAbsencesByEleve(idEleve);
+            if (absences.Any())
+            {
+                foreach (var absence in absences)
+                {
+                    eleve.Absences.Add(absence);
+                }
+            }
+            
+            /*return View(eleveVM);*/
+
+            return View(eleve);
+        }
+
+        public ActionResult ListeClasses()
+        {
+            List<Classe> classes = manager.GetAllClasses();
+            foreach (var classe in classes)
+            {
+                classesVM.Add(new ClasseViewModel { Nom = $"{ classe.NomEtablissement }", Niveau = $"{ classe.Niveau }", ID = classe.ClasseId });
+            }
+
+            return View(classesVM);
         }
 
         public ActionResult DetailClasse(int idClasse)
@@ -91,9 +105,16 @@ namespace ASP.NET.Projet.Controllers
             return View(elevesVM);
         }
 
+        /*public ActionResult AjouterNote(int idEleve)
+        {
+            Note note = new Note { };
+            manager.AjouterNote(note);
+        }*/
+
         //TO DO :
         //Ajouter absence
-        //Ajout/Modification Note
-
+        //Ajout Note
+        //Modification Note
+        //Rechercher Eleve
     }
 }
