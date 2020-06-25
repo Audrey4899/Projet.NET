@@ -1,0 +1,12 @@
+﻿@using ASP.NET.Projet.Models
+@model AbsenceViewModel
+
+<h2>Enregistrer une absence</h2>
+
+@using (Html.BeginForm("AjouterAbsence", "Home", FormMethod.Post))
+{
+    @Html.EditorFor(m => m.Date)
+    @Html.TextBoxFor(m => m.Motif)
+
+    <input type="submit" value="Enregistrer" />
+}

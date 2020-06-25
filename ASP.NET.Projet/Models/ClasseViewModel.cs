@@ -11,6 +11,6 @@ namespace ASP.NET.Projet.Models
         public int ID { get; set; }
         public string Niveau { get; set; }
         public string Nom { get; set; }
-        public List<Eleve> Eleves { get; set; }
+        public ICollection<Eleve> Eleves { get; set; }
     }
 }

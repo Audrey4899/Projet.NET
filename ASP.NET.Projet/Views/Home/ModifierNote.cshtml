@@ -1,0 +1,11 @@
+﻿@using ASP.NET.Projet.Models
+@model NoteViewModel
+
+<h2>Ajouter une note</h2>
+
+@using (Html.BeginForm("ModifierNote", "Home", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.Note)
+
+    <input type="submit" value="Modifier" />
+}

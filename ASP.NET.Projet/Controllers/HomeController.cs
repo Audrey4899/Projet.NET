@@ -45,6 +45,7 @@ namespace ASP.NET.Projet.Controllers
             return View(elevesVM);
         }
 
+        [HttpGet]
         public ActionResult RechercheEleve(string name)
         {
             List<Eleve> elevesRecherche = manager.GetEleveByName(name);
@@ -52,7 +53,7 @@ namespace ASP.NET.Projet.Controllers
             {
                 elevesVM.Add(new EleveViewModel { Identite = $"{ eleveTrouve.Nom.ToUpper() } {eleveTrouve.Prenom }" });
             }
-
+            
             return View(elevesVM);
         }
 
@@ -105,16 +106,28 @@ namespace ASP.NET.Projet.Controllers
             return View(elevesVM);
         }
 
-        /*public ActionResult AjouterNote(int idEleve)
+        [HttpPost]
+        public ActionResult AjouterNote(Note note, int idEleve)
         {
-            Note note = new Note { };
             manager.AjouterNote(note);
-        }*/
 
-        //TO DO :
-        //Ajouter absence
-        //Ajout Note
-        //Modification Note
-        //Rechercher Eleve
+            return Redirect("/Home/ListeEleves");
+        }
+
+        [HttpPost]
+        public ActionResult ModifierNote(Note note, int idEleve)
+        {
+            manager.ModifierNote(note);
+
+            return Redirect("/Home/ListeEleves");
+        }
+
+        [HttpPost]
+        public ActionResult AjouterAbsence(Absence absence, int idEleve)
+        {
+            manager.AjouterAbsence(absence);
+
+            return Redirect("/Home/ListeEleves");
+        }
     }
 }

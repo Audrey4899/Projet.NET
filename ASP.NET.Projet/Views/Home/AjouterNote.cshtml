@@ -1,7 +1,14 @@
-﻿
-@{
-    ViewBag.Title = "AjouterNote";
+﻿@using ASP.NET.Projet.Models
+@model NoteViewModel
+
+<h2>Ajouter une note</h2>
+
+@using (Html.BeginForm("AjouterNote", "Home", FormMethod.Post))
+{
+    @Html.EditorFor(m => m.Date)
+    @Html.TextBoxFor(m => m.Note)
+    @Html.TextBoxFor(m => m.Matiere)
+    @Html.TextAreaFor(m => m.Appreciation)
+
+    <input type="submit" value="Ajouter" />
 }
-
-<h2>AjouterNote</h2>
-

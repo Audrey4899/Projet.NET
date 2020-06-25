@@ -14,6 +14,12 @@ namespace ASP.NET.Projet
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "AjouterNote",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "AjouterNote" }
+            );
+
+            routes.MapRoute(
                 name: "RechercheEleve",
                 url: "{controller}/{action}/{name}",
                 defaults: new { controller = "Home", action = "RechercheEleve" }

@@ -92,6 +92,12 @@ namespace BusinessLayer
             return nc.Ajouter(n);
         }
 
+        public void ModifierNote(Note n)
+        {
+            NoteCommand nc = new NoteCommand(contexte);
+            nc.Modifier(n);
+        }
+
         #endregion
 
         #region Absence
