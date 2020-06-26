@@ -1,54 +1,63 @@
 ﻿@model Classes.Entites.Eleve
 
-<h2>Fiche eleve</h2>
-
 <!-- Identité -->
-<h3>Nom :</h3>
-<h4>@Model.Nom.ToUpper() @Model.Prenom</h4>
-
+<h1 class="text-center">@Model.Nom.ToUpper() @Model.Prenom</h1>
+<br />
 <!-- Notes -->
-<h3>Notes :</h3>
+<h4>Notes :</h4>
 @if (Model.Notes != null)
 {
-    <table>
-        <tr>
-            <th>Notes</th>
-            <th></th>
-        </tr>
-
-        @foreach (var note in Model.Notes)
-        {
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>@note.NoteValeur</td>
-                <td><input type="button" value="Modifier" onclick="location.href='@Url.Action("ModifierNote", "Home")'" /></td>
+                <th>Matière</th>
+                <th>Notes</th>
+                <th></th>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @foreach (var note in Model.Notes)
+            {
+                <tr>
+                    <td>@note.Matiere</td>
+                    <td>@note.NoteValeur</td>
+                    <td><input type="button" class="btn btn-warning" value="Modifier" onclick="location.href='@Url.Action("ModifierNote", "Home",  new { idNote = note.NoteId, idEleve = Model.EleveId })'" /></td>
+                </tr>
+            }
+        </tbody>
     </table>
 }
 else
 {
-    <h4> L'eleve n'a pas encore de note.</h4>
+    <h5 class="text-info"> L'eleve n'a pas encore de note.</h5>
 }
-<input type="button" value="Entrer une note" onclick="location.href='@Url.Action("AjouterNote", "Home")'" />
+<input type="button" class="btn btn-info" value="Entrer une note" onclick="location.href='@Url.Action("AjouterNote", "Home",  new { idEleve = Model.EleveId })'" />
+<br /><br />
 
 <!-- Absences -->
-<h3>Absences :</h3>
+<h4>Absences :</h4>
 @if (Model.Absences != null)
 {
-    <table>
+<table class="table table-bordered table-striped">
+    <thead>
         <tr>
-            <th>Absences</th>
+            <th>Date</th>
+            <th>Motif</th>
         </tr>
+    </thead>
+    <tbody>
         @foreach (var absence in Model.Absences)
         {
             <tr>
+                <td>@absence.DateAbsence.ToString("dd/MM/yyyy")</td>
                 <td>@absence.Motif</td>
             </tr>
         }
-    </table>
+    </tbody>
+</table>
 }
 else
 {
-    <h4> L'eleve n'a pas d'absence.</h4>
+    <h5 class="text-info"> L'eleve n'a pas d'absence.</h5>
 }
-<input type="button" value="Enregistrer une absence" onclick="location.href='@Url.Action("AjouterAbsence", "Home")'" />
+<input type="button" class="btn btn-info" value="Enregistrer une absence" onclick="location.href='@Url.Action("AjouterAbsence", "Home",  new { idEleve = Model.EleveId })'" />

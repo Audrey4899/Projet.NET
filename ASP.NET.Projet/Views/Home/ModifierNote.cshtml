@@ -5,10 +5,27 @@
 
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary()
+    <div>
+        @Html.LabelFor(m => m.Date)
+        <br />
+        @Html.EditorFor(m => m.Date, new { @class = "form-control"/*, @Value = Model.Date*/ })
+    </div>
+    <br />
     <div>
         @Html.LabelFor(m => m.Note)
         <br />
-        @Html.EditorFor(m => m.Note, new { @class = "form-control" })
+        @Html.EditorFor(m => m.Note, new { @class = "form-control"/*, @Value = Model.Note*/ })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.Matiere)
+        @Html.TextBoxFor(m => m.Matiere, new { @class = "form-control"/*, @Value = Model.Matiere*/ })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.Appreciation)
+        @Html.TextAreaFor(m => m.Appreciation, new { @class = "form-control"/*, @Value = Model.Appreciation*/ })
     </div>
     <br />
     <button class="btn btn-success" type="submit" value="Modifier">Modifier</button>

@@ -79,7 +79,7 @@ namespace BusinessLayer
             NoteQuery nq = new NoteQuery(contexte);
             return nq.GetAll().ToList();
         }
-
+        
         public List<Note> GetNotesByEleve(int idEleve)
         {
             NoteQuery nq = new NoteQuery(contexte);
@@ -96,6 +96,12 @@ namespace BusinessLayer
         {
             NoteCommand nc = new NoteCommand(contexte);
             nc.Modifier(n);
+        }
+
+        public Note GetNoteById(int idNote)
+        {
+            NoteQuery nq = new NoteQuery(contexte);
+            return nq.GetNoteById(idNote);
         }
 
         #endregion
@@ -117,6 +123,12 @@ namespace BusinessLayer
         {
             AbsenceCommand ac = new AbsenceCommand(contexte);
             return ac.Ajouter(a);
+        }
+
+        public List<Absence> Get5Last()
+        {
+            AbsenceQuery aq = new AbsenceQuery(contexte);
+            return aq.Get5Last().ToList();
         }
 
         #endregion

@@ -1,0 +1,28 @@
+﻿@using ASP.NET.Projet.Models
+@model List<AbsenceViewModel>
+
+<h3 class="text-center">Dernières absences :</h3>
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Motif</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var absence in Model)
+            {
+                <tr>
+                    <td>@absence.Motif</td>
+                    <td>@absence.Date.ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h4 class="text-info"> Aucune abscence enregistrée.</h4>
+}

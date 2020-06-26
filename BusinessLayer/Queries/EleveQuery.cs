@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BusinessLayer.Queries
@@ -36,5 +37,11 @@ namespace BusinessLayer.Queries
         {
             return _contexte.Eleves.Where(e => e.ClasseId == idClasse);
         }
+
+        /*public IQueryable<Eleve> Get5Best()
+        {
+            return _contexte.Eleves.GroupBy(e => e.EleveId, e => e.Notes.Select(n => n.NoteValeur), (key, notes) => new { EleveId = key, Moyenne = notes.Average() })
+                .OrderBy(e => e.Moyenne.Take(5));
+        }*/
     }
 }

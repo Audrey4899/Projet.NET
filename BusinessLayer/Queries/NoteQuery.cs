@@ -26,5 +26,10 @@ namespace BusinessLayer.Queries
         {
             return _contexte.Notes.Where(n => n.EleveId == idEleve);
         }
+
+        public Note GetNoteById(int idNote)
+        {
+            return _contexte.Notes.Where(n => n.NoteId == idNote).SingleOrDefault();
+        }
     }
 }

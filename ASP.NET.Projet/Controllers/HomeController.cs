@@ -14,6 +14,7 @@ namespace ASP.NET.Projet.Controllers
         Manager manager = Manager.GetInstance();
         List<EleveViewModel> elevesVM = new List<EleveViewModel>();
         List<ClasseViewModel> classesVM = new List<ClasseViewModel>();
+        List<AbsenceViewModel> absenceVM = new List<AbsenceViewModel>();
 
         public ActionResult Index()
         {
@@ -113,12 +114,13 @@ namespace ASP.NET.Projet.Controllers
         }
 
         [HttpPost]
-        public ActionResult AjouterNote(Note note)
+        public ActionResult AjouterNote(NoteViewModel noteVM, int idEleve)
         {
             if(!ModelState.IsValid)
             {
-                return View(note);
+                return View(noteVM);
             }
+            Note note = new Note { Appreciation = noteVM.Appreciation, DateNote = noteVM.Date, Matiere = noteVM.Matiere, NoteValeur = noteVM.Note, EleveId = idEleve };
             manager.AjouterNote(note);
             return Redirect("/");
         }
@@ -130,12 +132,21 @@ namespace ASP.NET.Projet.Controllers
         }
 
         [HttpPost]
-        public ActionResult ModifierNote(Note note)
+        public ActionResult ModifierNote(NoteViewModel noteVM, int idEleve, int idNote)
         {
             if (!ModelState.IsValid)
             {
-                return View(note);
+                return View(noteVM);
             }
+
+            Note note = manager.GetNoteById(idNote);
+
+            note.Appreciation = noteVM.Appreciation;
+            note.DateNote = noteVM.Date;
+            note.Matiere = noteVM.Matiere;
+            note.NoteValeur = noteVM.Note;
+            note.EleveId = idEleve;
+
             manager.ModifierNote(note);
             return Redirect("/");
         }
@@ -147,14 +158,29 @@ namespace ASP.NET.Projet.Controllers
         }
 
         [HttpPost]
-        public ActionResult AjouterAbsence(Absence absence)
+        public ActionResult AjouterAbsence(AbsenceViewModel absenceVM, int idEleve)
         {
             if (!ModelState.IsValid)
             {
-                return View(absence);
+                return View(absenceVM);
             }
+            Absence absence = new Absence { DateAbsence = absenceVM.Date, Motif = absenceVM.Motif, EleveId = idEleve };
             manager.AjouterAbsence(absence);
             return Redirect("/");
+        }
+
+        public ActionResult ListeLastAbsences()
+        {
+            List<Absence> absences = manager.Get5Last();
+            if(absences.Any())
+            {
+                foreach (var absence in absences)
+                {
+                    absenceVM.Add(new AbsenceViewModel { Motif = $"{ absence.Motif }", Date = absence.DateAbsence });
+                }
+            }
+
+            return View(absenceVM);
         }
     }
 }

@@ -1,18 +1,22 @@
 ﻿@using ASP.NET.Projet.Models
 @model List<EleveViewModel>
 
-<h2>Liste des eleves</h2>
+<h2>Eleves de la classe</h2>
 
-<table>
-    <tr>
-        <th>Identité</th>
-        <th>Action</th>
-    </tr>
-    @foreach (var eleve in Model)
-    {
+<table class="table table-striped">
+    <thead>
         <tr>
-            <td>@eleve.Identite</td>
-            <td><input type="button" value="Detail" onclick="location.href='@Url.Action("DetailEleve", "Home",  new { idEleve = eleve.ID })'" /></td>
+            <th>Identité</th>
+            <th></th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var eleve in Model)
+        {
+            <tr>
+                <td>@eleve.Identite</td>
+                <td><input type="button" class="btn btn-info" value="Detail" onclick="location.href='@Url.Action("DetailEleve", "Home",  new { idEleve = eleve.ID })'" /></td>
+            </tr>
+        }
+    </tbody>
 </table>

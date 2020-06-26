@@ -3,19 +3,23 @@
 
 <h2>Liste des classes</h2>
 
-<table>
-    <tr>
-        <th>Etablissement</th>
-        <th>Niveau</th>
-        <th>Action</th>
-    </tr>
-    @foreach (var classe in Model)
-    {
+<table class="table table-striped">
+    <thead>
         <tr>
-            <td>@classe.Nom</td>
-            <td>@classe.Niveau</td>
-            <td><input type="button" value="Detail" onclick="location.href='@Url.Action("DetailClasse", "Home",  new { idClasse = classe.ID })'" /></td>
+            <th>Etablissement</th>
+            <th>Niveau</th>
+            <th></th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var classe in Model)
+        {
+            <tr>
+                <td>@classe.Nom</td>
+                <td>@classe.Niveau</td>
+                <td><input type="button" class="btn btn-info" value="Detail" onclick="location.href='@Url.Action("DetailClasse", "Home",  new { idClasse = classe.ID })'" /></td>
+            </tr>
+        }
+    </tbody>
 </table>
 

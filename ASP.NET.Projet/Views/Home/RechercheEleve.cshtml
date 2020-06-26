@@ -1,27 +1,30 @@
 ﻿@using ASP.NET.Projet.Models
 @model List<EleveViewModel>
 
-<h2>Eleves trouvés</h2>
+<h2 class="text-center">Eleves trouvés</h2>
 
 @if (Model.Count > 0)
 {
-    <table>
-        <tr>
-            <th>Identité</th>
-            <th>Action</th>
-        </tr>
-
-        @foreach (var eleve in Model)
-        {
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>eleve.Identite</td>
-                <td><button>Détail</button></td>
+                <th>Identité</th>
+                <th></th>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @foreach (var eleve in Model)
+            {
+                <tr>
+                    <td>eleve.Identite</td>
+                    <td><input type="button" class="btn btn-info" value="Detail" onclick="location.href='@Url.Action("DetailEleve", "Home",  new { idEleve = eleve.ID })'" /></td>
+                </tr>
+            }
+        </tbody>
     </table>
 }
 
 else
 {
-    <h4>Aucun élève ne correspond à cette recherche.</h4>
+    <h4 class="text-info">Aucun élève ne correspond à cette recherche.</h4>
 }

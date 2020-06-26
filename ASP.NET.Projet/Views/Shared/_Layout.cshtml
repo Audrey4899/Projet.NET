@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using ASP.NET.Projet.Models
+@model List<EleveViewModel>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,6 +26,11 @@
                     <li>@Html.ActionLink("Eleves", "ListeEleves", "Home")</li>
                     <li>@Html.ActionLink("Classes", "ListeClasses", "Home")</li>
                 </ul>
+                @using (Html.BeginForm())
+                {
+                    @Html.TextBoxFor(m => m.First().Identite, new { @class = "form-control", @placeholder = "Rechercher" })
+                    <input type="submit" class="btn btn-success" value="Rechercher" />
+                }
             </div>
         </div>
     </div>

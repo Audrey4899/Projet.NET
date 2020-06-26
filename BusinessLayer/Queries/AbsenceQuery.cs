@@ -26,5 +26,10 @@ namespace BusinessLayer.Queries
         {
             return _contexte.Absences.Where(a => a.EleveId == idEleve);
         }
+
+        public IQueryable<Absence> Get5Last()
+        {
+            return _contexte.Absences.OrderByDescending(a => a.DateAbsence).Take(5);
+        }
     }
 }
