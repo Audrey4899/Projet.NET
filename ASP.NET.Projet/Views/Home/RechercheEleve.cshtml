@@ -16,7 +16,7 @@
             @foreach (var eleve in Model)
             {
                 <tr>
-                    <td>eleve.Identite</td>
+                    <td>@eleve.Identite</td>
                     <td><input type="button" class="btn btn-info" value="Detail" onclick="location.href='@Url.Action("DetailEleve", "Home",  new { idEleve = eleve.ID })'" /></td>
                 </tr>
             }

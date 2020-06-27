@@ -7,17 +7,17 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Motif</th>
-                <th>Date</th>
+                <th class="text-center">Eleve</th>
+                <th class="text-center">Date</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var absence in Model)
             {
-                <tr>
-                    <td>@absence.Motif</td>
-                    <td>@absence.Date.ToString("dd/MM/yyyy")</td>
-                </tr>
+            <tr>
+                <td>@absence.Eleve.Nom.ToUpper() @absence.Eleve.Prenom</td>
+                <td>@absence.Date.ToString("dd/MM/yyyy")</td>
+            </tr>
             }
         </tbody>
     </table>

@@ -3,6 +3,16 @@
 
 <h2>Liste des eleves</h2>
 
+<!-- Rechercher élève -->
+<div class="text-right">
+    @using (Html.BeginForm("RechercheEleve", "Home", FormMethod.Get))
+    {
+        @Html.TextBox("name", null, new { @class = "Form-control", @placeholder = "Rechercher un élève" })
+        <input type="submit" class="btn btn-success" value="Rechercher" />
+    }
+</div>
+
+<!-- Liste élèves -->
 <table class="table table-striped">
     <thead>
         <tr>

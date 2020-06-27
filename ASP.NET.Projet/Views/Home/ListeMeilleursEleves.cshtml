@@ -1,0 +1,27 @@
+﻿@using ASP.NET.Projet.Models
+@model List<EleveViewModel>
+
+<h3 class="text-center">Meilleurs élèves :</h3>
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">Eleve</th>
+                <th class="text-center">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eleve in Model)
+            {
+                <tr>
+                    <td>@eleve.Identite</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h4 class="text-info"> Aucune note enregistrée.</h4>
+}

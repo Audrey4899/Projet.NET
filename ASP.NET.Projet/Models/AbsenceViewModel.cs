@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes.Entites;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,5 +18,7 @@ namespace ASP.NET.Projet.Models
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime Date { get; set; }
+
+        public Eleve Eleve { get; set; }
     }
 }

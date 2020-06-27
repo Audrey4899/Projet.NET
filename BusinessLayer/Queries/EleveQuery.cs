@@ -38,10 +38,20 @@ namespace BusinessLayer.Queries
             return _contexte.Eleves.Where(e => e.ClasseId == idClasse);
         }
 
+        /*SELECT e.nom, AVG(n.valeur) as Moyenne FROM eleve e, note n  WHERE e.EleveId = n.EleveId GROUP BY (e.EleveId) ORDER BY Moyenne DESC*/
+
         /*public IQueryable<Eleve> Get5Best()
         {
-            return _contexte.Eleves.GroupBy(e => e.EleveId, e => e.Notes.Select(n => n.NoteValeur), (key, notes) => new { EleveId = key, Moyenne = notes.Average() })
-                .OrderBy(e => e.Moyenne.Take(5));
+            return _contexte.Eleves
+                .Join(_contexte.Eleves, 
+                  eleve => eleve.EleveId,        
+                  note => note.EleveId,   
+                  (eleve, note) => new { Eleve = eleve, Note = note })
+        
+                .GroupBy(eleve => eleve.Eleve.EleveId)
+                .Select(eleve => new { Moyenne = eleve.Average(note => note.Note.NoteValeur), ID = eleve.Key})
+                .OrderByDescending(eleve => eleve.Moyenne)
+                .ToList();
         }*/
     }
 }

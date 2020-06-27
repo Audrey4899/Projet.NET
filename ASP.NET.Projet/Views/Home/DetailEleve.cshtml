@@ -1,7 +1,8 @@
-﻿@model Classes.Entites.Eleve
+﻿@using ASP.NET.Projet.Models
+@model EleveViewModel
 
 <!-- Identité -->
-<h1 class="text-center">@Model.Nom.ToUpper() @Model.Prenom</h1>
+<h1 class="text-center">@Model.Identite</h1>
 <br />
 <!-- Notes -->
 <h4>Notes :</h4>
@@ -21,7 +22,7 @@
                 <tr>
                     <td>@note.Matiere</td>
                     <td>@note.NoteValeur</td>
-                    <td><input type="button" class="btn btn-warning" value="Modifier" onclick="location.href='@Url.Action("ModifierNote", "Home",  new { idNote = note.NoteId, idEleve = Model.EleveId })'" /></td>
+                    <td><input type="button" class="btn btn-warning" value="Modifier" onclick="location.href='@Url.Action("ModifierNote", "Home",  new { idNote = note.NoteId, idEleve = Model.ID })'" /></td>
                 </tr>
             }
         </tbody>
@@ -31,33 +32,34 @@ else
 {
     <h5 class="text-info"> L'eleve n'a pas encore de note.</h5>
 }
-<input type="button" class="btn btn-info" value="Entrer une note" onclick="location.href='@Url.Action("AjouterNote", "Home",  new { idEleve = Model.EleveId })'" />
-<br /><br />
+<input type="button" class="btn btn-info" value="Entrer une note" onclick="location.href='@Url.Action("AjouterNote", "Home",  new { idEleve = Model.ID })'" />
+<br />
+<br />
 
 <!-- Absences -->
 <h4>Absences :</h4>
 @if (Model.Absences != null)
 {
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Motif</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var absence in Model.Absences)
-        {
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>@absence.DateAbsence.ToString("dd/MM/yyyy")</td>
-                <td>@absence.Motif</td>
+                <th class="text-center">Date</th>
+                <th class="text-center">Motif</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var absence in Model.Absences)
+            {
+                <tr>
+                    <td>@absence.DateAbsence.ToString("dd/MM/yyyy")</td>
+                    <td>@absence.Motif</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
     <h5 class="text-info"> L'eleve n'a pas d'absence.</h5>
 }
-<input type="button" class="btn btn-info" value="Enregistrer une absence" onclick="location.href='@Url.Action("AjouterAbsence", "Home",  new { idEleve = Model.EleveId })'" />
+<input type="button" class="btn btn-info" value="Enregistrer une absence" onclick="location.href='@Url.Action("AjouterAbsence", "Home",  new { idEleve = Model.ID })'" />

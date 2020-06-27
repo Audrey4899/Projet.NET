@@ -1,4 +1,6 @@
-﻿<h1 class="text-center">Bienvenue sur Gestion Eleves !</h1>
+﻿@using ASP.NET.Projet.Models
+@model List<EleveViewModel>
+<h1 class="text-center">Bienvenue sur Gestion Eleves !</h1>
 
 <div class="text-center">
     <h3>Que voulez vous faire ?</h3>
@@ -9,4 +11,5 @@
     <button class="btn btn-info" type="button" value="Voir mes classes" onclick="location.href='@Url.Action("ListeClasses", "Home")'">Voir mes classes</button>
     <br />
 </div>
+<br />
 @{ Html.RenderAction("ListeLastAbsences", "Home"); }

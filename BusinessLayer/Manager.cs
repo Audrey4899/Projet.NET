@@ -46,6 +46,12 @@ namespace BusinessLayer
             return eq.GetById(idEleve);
         }
 
+        /*public List<Eleve> Get5Best()
+        {
+            EleveQuery eq = new EleveQuery(contexte);
+            return eq.Get5Best().ToList();
+        }*/
+
         public List<Eleve> GetEleveByClasse(int idClasse)
         {
             EleveQuery eq = new EleveQuery(contexte);

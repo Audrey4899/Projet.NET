@@ -52,7 +52,7 @@ namespace ASP.NET.Projet.Controllers
             List<Eleve> elevesRecherche = manager.GetEleveByName(name);
             foreach (var eleveTrouve in elevesRecherche)
             {
-                elevesVM.Add(new EleveViewModel { Identite = $"{ eleveTrouve.Nom.ToUpper() } {eleveTrouve.Prenom }" });
+                elevesVM.Add(new EleveViewModel { Identite = $"{ eleveTrouve.Nom.ToUpper() } {eleveTrouve.Prenom }", ID = eleveTrouve.EleveId });
             }
             
             return View(elevesVM);
@@ -79,10 +79,10 @@ namespace ASP.NET.Projet.Controllers
                     eleve.Absences.Add(absence);
                 }
             }
-            
-            /*return View(eleveVM);*/
 
-            return View(eleve);
+            EleveViewModel eleveVM = new EleveViewModel { Identite = $"{ eleve.Nom.ToUpper() } {eleve.Prenom }" };
+
+            return View(eleveVM);
         }
 
         public ActionResult ListeClasses()
@@ -101,7 +101,7 @@ namespace ASP.NET.Projet.Controllers
             List<Eleve> elevesClasse = manager.GetEleveByClasse(idClasse);
             foreach (var eleve in elevesClasse)
             {
-                elevesVM.Add(new EleveViewModel { Identite = $"{ eleve.Nom.ToUpper() } {eleve.Prenom }" });
+                elevesVM.Add(new EleveViewModel { Identite = $"{ eleve.Nom.ToUpper() } {eleve.Prenom }", ID = eleve.EleveId });
             }
 
             return View(elevesVM);
@@ -176,11 +176,25 @@ namespace ASP.NET.Projet.Controllers
             {
                 foreach (var absence in absences)
                 {
-                    absenceVM.Add(new AbsenceViewModel { Motif = $"{ absence.Motif }", Date = absence.DateAbsence });
+                    absenceVM.Add(new AbsenceViewModel { Motif = $"{ absence.Motif }", Date = absence.DateAbsence, Eleve = absence.Eleve });
                 }
             }
 
             return View(absenceVM);
         }
+
+        /*public ActionResult ListeMeilleursEleves()
+        {
+            List<Eleve> eleves = manager.Get5Best();
+            if (eleves.Any())
+            {
+                foreach (var eleve in eleves)
+                {
+                    elevesVM.Add(new EleveViewModel { Identite = $"{ eleve.Nom.ToUpper() } {eleve.Prenom }" });
+                }
+            }
+
+            return View(elevesVM);
+        }*/
     }
 }
